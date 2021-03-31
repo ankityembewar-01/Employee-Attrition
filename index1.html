@@ -1,0 +1,161 @@
+ <!--Html code for frontend-->
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insurance Cost Prediction</title>
+    <link href='../static/index.css' rel="stylesheet" type="text/css"> <!--linking to css file-->
+    
+</head>
+<div class="bg-image"></div>
+<body>
+    <div class="bg-text">
+        <br>
+        
+        <center>
+        <h1 class='Heading'><b>Predict Employee Attrition</b></h1>
+        <h3 class='Heading1'>Keep Grow & Keep Learn</h3>
+        <img src="../static/Look.gif"  width=370 height=434  style="position: relative; 
+        left:340px;top:0px"><!--incude image-->
+        </center>
+
+        <br>
+        <form action = "http://localhost:5000/predict" method = "POST"> <!--model prediction link-->
+        
+        <!--Creating a form-->
+        <label for="MonthlyRate" class="title"><b>MonthlyRate :</b></label>
+        <input class="title" placeholder="MonthlyRate" name="MonthlyRate" id="MonthlyRate" style="position: relative;
+        left:178px;bottom: 450px;" type = number required><br><br>
+        
+        <label for="MonthlyIncome" class="title"><b>MonthlyIncome :</b></label>
+        <input class="title" placeholder="MonthlyIncome" name="MonthlyIncome" id="MonthlyIncome" style="position: relative;
+        left:154px;bottom: 450px;" type = number required><br><br>
+
+        <label for="DailyRate" class="title"><b>DailyRate :</b></label>
+        <input class="title" placeholder="DailyRate" name="DailyRate" id="DailyRate" style="position: relative;
+        left:204px;bottom: 450px;" type = number required><br><br>
+
+        <label for="Age" class="title"><b>Age :</b></label>
+        <input class="title" placeholder="Age" name="Age" id="Age"  style="position: relative;
+        left:256px;bottom: 450px;" type = number required><br><br>
+
+        <label for="Experience" class="title"><b>Total Experience :</b></label>
+        <select  class="title" id="Experience" name="Experience" id="Experience" style=" height:28px;width:203px;position: relative;
+        left:144px;bottom: 450px;" required >
+            <option value="">Select Total Experience</option>
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+            <option value="21">21</option>
+            <option value="22">22</option>
+            <option value="23">23</option>
+        </select><br><br>
+
+        <label for="Job Level" class="title"><b>Job Level : </b></label>
+        <select  class="title" id="Job Level" name="Job Level" id="Job Level" style=" height:28px;width:203px;position: relative;
+        left:205px;bottom: 450px;" required >
+            <option value="">Choose Job Level</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select><br><br>
+        
+        <label for="Over Time" class="title"><b>Over Time : </b></label>
+        <select  class="title" id="Over Time" name="Over Time" id="Over Time" style=" height:28px;width:203px;position: relative;
+        left:196px;bottom: 450px;" required >
+            <option value="">Choose Over Time</option>
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select><br><br>
+
+        <label for="curr_exp" class="title"><b>Current Role Exp : </b></label>
+        <select  class="title" id="curr_exp" name="curr_exp" id="curr_exp" style=" height:28px;width:203px;position: relative;
+        left:135px;bottom: 450px;" required >
+            <option value="">Current Role Experience</option>
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+        </select><br><br>
+
+        <label for="HourlyRate" class="title"><b>Hourly Rate : </b></label>
+        <input class="title" id="HourlyRate" name="HourlyRate" placeholder="HourlyRate"  style="position: relative;
+        left:182px;bottom: 450px;width:203px" type = number required><br><br>
+
+        <label for="curr_exp_man" class="title"><b>Current Exp with Manager :</b></label>
+        <select  class="title" id="curr_exp_man" name="curr_exp_man" id="curr_exp_man" style=" height:28px;width:203px;position: relative;
+        left:55px;bottom: 450px;" required >
+            <option value="">Select Option</option>
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+        </select><br><br>
+
+        <br><br>
+        <button type="submit" class="button">Predict</button> <!--creating a button-->
+        
+        <var type>
+        {{pred}}</var>
+        <style>
+            var { 
+              font-style: italic;
+              font-size: 30px;
+              font-weight: bold;
+              color : rgb(0, 0, 0);
+              position: relative;
+              left:75px;
+              bottom:479px;
+            }
+        </style>
+       
+        <br>
+
+        </form>
+        
+        
+        
+        
+        </div>
+        <br>
+       
+
+    </div>
+   
+
+</body>
+</html>
+        
