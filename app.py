@@ -13,7 +13,7 @@ def hello_world():
     return render_template("index1.html")
 
 
-@app.route('/predict',methods=['POST','GET']) #url for output
+@app.route('/predict',methods=['POST']) #url for output
 def predict():
     int_features=[float(x) for x in request.form.values()]
     final=[np.array(int_features)]
